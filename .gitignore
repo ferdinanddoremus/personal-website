@@ -5,4 +5,4 @@ dist
 .cache
 .DS_Store
 *.pem
-./config
+config
