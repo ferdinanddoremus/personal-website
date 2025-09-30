@@ -20,7 +20,7 @@ export default async function WritingPage({
     <article>
       <title>{post.title}</title>
       
-      <div className="border px-2ch py-[var(--line-height)] mb-[var(--line-height)]">
+      {/* <div className="border px-2ch py-[var(--line-height)] mb-[var(--line-height)]">
         <header>
           <div className="flex items-center justify-between mb-ch text-sm">
             <span>~/writings/{slug}</span>
@@ -32,15 +32,12 @@ export default async function WritingPage({
             {post.title}
           </h1>
         </header>
-      </div>
+      </div> */}
       
       <div className="mb-3ch">
-        <div 
-          className="prose prose-sm max-w-none"
-          style={{ 
-            lineHeight: '1.4',
-          }}
-          dangerouslySetInnerHTML={{ __html: post.content }} 
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>
       

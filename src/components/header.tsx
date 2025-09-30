@@ -1,4 +1,8 @@
 import { Link } from 'waku';
+import { getVersion, getLastUpdateDate } from '../lib/version.js';
+
+const version = getVersion();
+const lastUpdate = getLastUpdateDate();
 
 export const Header = () => {
   return (
@@ -7,7 +11,7 @@ export const Header = () => {
         <thead>
           <tr>
             <td className="table-border w-full pt-[calc((var(--line-height)/2)-2)]" colSpan={2} rowSpan={2}>
-              <Link to="/" className="font-bold text-lg leading-[calc(var(--line-height)*2)] uppercase">~/groremus</Link>
+              <Link to="/" className="font-bold leading-[calc(var(--line-height)*2)]">~/groremus</Link>
               <nav className="flex gap-ch">
                 <Link to="/about" className="hover:underline">about</Link>
                 <Link to="/writings" className="hover:underline">writings</Link>
@@ -17,7 +21,7 @@ export const Header = () => {
               version
             </th>
             <td className="table-border min-w-0 text-right pt-[calc((var(--line-height)/2)-2)]">
-              v0.1.0
+              {version}
             </td>
           </tr>
           <tr>
@@ -25,7 +29,7 @@ export const Header = () => {
               updated
             </td>
             <td className="table-border min-w-0 text-right">
-              2025-09-29
+              {lastUpdate}
             </td>
           </tr>
         </thead>

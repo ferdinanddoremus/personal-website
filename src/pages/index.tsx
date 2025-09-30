@@ -4,7 +4,7 @@ export default async function HomePage() {
   return (
     <div>
       <title>Groremus</title>
-      <h2 className="font-bold mb-2ch uppercase">
+      <h2 className="font-bold mb-2ch">
         Ferdinand Dorémus
       </h2>
     </div>

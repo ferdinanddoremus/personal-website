@@ -11,14 +11,19 @@ export default function Writings() {
           <p>No writings found. Add some markdown files to the content/writings directory.</p>
         </div>
       ) : (
-        <div className="space-y-[var(--line-height)]">
+        <div className="space-y-[calc(var(--line-height)*2)]">
           {posts.map((post, index) => (
-            <article 
-              key={post.slug} 
-              className="border p-2ch"
-            >
-              <div className="flex items-center justify-between mb-ch">
-                <span className="text-sm font-mono">#{String(index + 1).padStart(2, '0')}</span>
+            <article key={post.slug}>
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm">
+                  #{String(index + 1).padStart(2, '0')}{' '}
+                  <a 
+                    href={`/writings/${post.slug}`}
+                    className="font-bold underline hover:no-underline"
+                  >
+                    {post.title}
+                  </a>
+                </h2>
                 {post.date && (
                   <time className="text-sm">
                     {new Date(post.date).toLocaleDateString()}
@@ -26,22 +31,13 @@ export default function Writings() {
                 )}
               </div>
               
-              <h2 className="font-bold mb-ch">
-                <a 
-                  href={`/writings/${post.slug}`}
-                  className="underline hover:no-underline"
-                >
-                  {post.title}
-                </a>
-              </h2>
-              
               {post.excerpt && (
-                <p className="text-sm border-l-2 pl-ch ml-ch">
+                <p className="text-sm border-l-2 pl-ch my-[calc(var(--line-height)/2)]">
                   {post.excerpt}
                 </p>
               )}
               
-              <div className="mt-ch text-sm">
+              <div className="mt-[calc(var(--line-height)/2)] text-xs">
                 → <a href={`/writings/${post.slug}`} className="underline hover:no-underline">
                   Read more
                 </a>

@@ -32,6 +32,7 @@ layer(base);
   --spacing-80ch: 80ch;
   --spacing-100ch: 100ch;
 
+  --spacing-half-lh: calc(var(--line-height) / 2);
   --spacing-lh: var(--line-height);
   --spacing-2lh: calc(var(--line-height) * 2);
   --spacing-3lh: calc(var(--line-height) * 3);
@@ -69,6 +70,64 @@ layer(base);
   }
 
   .table-border {
-    @apply border-[2px] py-[calc(var(--line-height)/2-1px)] px-[calc(var(--line-height)/2)] leading-[var(--line-height)] align-top;
+    @apply border-[2px] py-[calc(var(--line-height)/2-1px)] px-half-lh leading-[var(--line-height)] align-top;
+  }
+
+  /* Post content styles - maintaining monospace grid */
+  .post-content {
+    line-height: var(--line-height);
+  }
+
+  .post-content h1 {
+    @apply font-bold text-lg mb-lh mt-2lh;
+  }
+
+  .post-content h2 {
+    @apply font-bold mb-lh mt-2lh;
+  }
+
+  .post-content h3 {
+    @apply font-bold mb-lh mt-lh;
+  }
+
+  .post-content p {
+    @apply mb-lh;
+  }
+
+  .post-content ul,
+  .post-content ol {
+    @apply mb-lh pl-4ch;
+  }
+
+  .post-content li {
+    @apply mb-[calc(var(--line-height)/2)];
+  }
+
+  .post-content pre {
+    @apply bg-[color-mix(in_srgb,var(--text-color)_5%,var(--background-color)_95%)] p-2ch mb-lh overflow-x-auto;
+  }
+
+  .post-content code {
+    @apply bg-[color-mix(in_srgb,var(--text-color)_8%,var(--background-color)_92%)] px-ch;
+  }
+
+  .post-content pre code {
+    @apply bg-transparent px-0;
+  }
+
+  .post-content blockquote {
+    @apply border-l-[3px] border-[var(--text-color)] pl-2ch ml-2ch mb-lh italic;
+  }
+
+  .post-content a {
+    @apply underline hover:no-underline;
+  }
+
+  .post-content strong {
+    @apply font-bold;
+  }
+
+  .post-content em {
+    @apply italic;
   }
 }
