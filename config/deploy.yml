@@ -1,0 +1,93 @@
+# Kamal deployment configuration
+service: personal-website
+
+# Docker image configuration
+image: ferdinanddoremus/personal-website
+builder:
+  arch: amd64
+
+# Server configuration
+servers:
+  web:
+    - siwa-prod-server
+
+proxy:
+  ssl: true
+  host: grorem.us
+  # Proxy connects to your container on port 80 by default.
+  app_port: 8080
+
+# Registry configuration (Docker Hub example)
+registry:
+  # Specify the registry server, if you're not using Docker Hub
+  server: ghcr.io
+  username: ferdinanddoremus
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Environment variables
+# env:
+#   clear:
+#     NODE_ENV: production
+#     PORT: 3000
+#   secret:
+#     - DATABASE_URL
+#     - SECRET_KEY_BASE
+
+# Health check configuration
+# healthcheck:
+#   path: /
+#   port: 8080
+#   max_attempts: 7
+#   interval: 20sg
+
+# SSL/TLS configuration with Let's Encrypt
+# ssl:
+#   automatic: true
+
+# Proxy configuration (Traefik)
+# proxy:
+#   ssl: true
+#   host: your-domain.com
+#   buffering:
+#     memory: 64m
+#     max_request_body: 0
+#     max_response_body: 0
+
+# Asset configuration
+# asset_path: /app/dist/public
+
+# Volume mounts for persistent data
+# volumes:
+#   - "/app/storage:/app/storage"
+
+# SSH configuration
+# ssh:
+#   user: deploy
+#   keys_only: true
+#   keys:
+#     - ~/.ssh/id_rsa
+
+# Boot configuration
+# boot:
+#   limit: 10
+#   wait: 2
+
+# Logging
+# logging:
+#   driver: json-file
+#   options:
+#     max-size: 100m
+#     max-file: 3
+
+# Backup configuration (optional)
+# backup:
+#   schedule: "0 2 * * *"  # Daily at 2 AM
+#   keep: 7
+
+# Aliases for common tasks
+# aliases:
+#   console: app exec --interactive --reuse "bin/rails console"
+#   shell: app exec --interactive --reuse "/bin/bash"
+#   logs: app logs --follow
+#   dbc: app exec "bin/rails dbconsole"
