@@ -6,12 +6,21 @@
   "scripts": {
     "dev": "waku dev",
     "build": "waku build",
-    "start": "waku start"
+    "start": "waku start",
+    "deploy": "kamal deploy",
+    "deploy:setup": "kamal setup",
+    "deploy:rollback": "kamal rollback",
+    "logs": "kamal app logs --follow",
+    "console": "kamal app exec --interactive --reuse \"/bin/sh\"",
+    "status": "kamal details"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-server-dom-webpack": "19.1.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "waku": "0.26.1"
   },
   "devDependencies": {
