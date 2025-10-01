@@ -16,6 +16,8 @@ proxy:
   host: grorem.us
   # Proxy connects to your container on port 80 by default.
   app_port: 8080
+  healthcheck:
+    path: /api/health
 
 # Registry configuration (Docker Hub example)
 registry:
