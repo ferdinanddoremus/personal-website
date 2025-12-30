@@ -4,11 +4,11 @@ date: "2025-10-22"
 excerpt: "The simple morning routine that helps me start every day with intention and energy."
 ---
 
-# My Morning Bulletproof Protocol
+# My morning bulletproof protocol
 
 Every morning (except when I'm out for an early bike ride), I follow what I call my "bulletproof protocol"—a sequence of small habits that set me up to tackle the day with focus and energy.
 
-## Why I Need This
+## Why I need this
 
 I'm the kind of person who needs structure. Without a solid morning routine, I easily slip into mindless phone scrolling, procrastination, and other productivity killers. These simple rituals help me unplug my brain and take care of both my mind and body before the chaos of the day begins.
 
