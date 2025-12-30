@@ -6,11 +6,21 @@ export default async function AboutPage() {
   return (
     <div>
       <title>{data.title}</title>
-      <h1 className="text-4xl font-bold tracking-tight">{data.headline}</h1>
-      <p>{data.body}</p>
-      <Link to="/" className="mt-4 inline-block underline">
-        Return home
-      </Link>
+      <p>
+        Some cool stuff i work on:
+      </p>
+      <ul className="gap-x-ch">
+        <li>
+          <a href="https://siwa.io" target="_blank" rel="noreferrer" className="underline hover:no-underline">
+            siwa.io
+          </a>
+        </li>
+        <li>
+          <Link to="/dubsiren" className="underline hover:no-underline">
+            dubsiren
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }

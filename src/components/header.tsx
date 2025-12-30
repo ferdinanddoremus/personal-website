@@ -11,9 +11,9 @@ export const Header = () => {
         <thead>
           <tr>
             <td className="table-border w-full pt-[calc((var(--line-height)/2)-2)]" colSpan={2} rowSpan={2}>
-              <Link to="/" className="font-bold leading-[calc(var(--line-height)*2)]">~/groremus</Link>
+              <Link to="/" className="font-bold leading-[calc(var(--line-height)*2)]">~/Groremus</Link>
               <nav className="flex gap-ch">
-                <Link to="/about" className="hover:underline">about</Link>
+                <Link to="/projects" className="hover:underline">projects</Link>
                 <Link to="/writings" className="hover:underline">writings</Link>
               </nav>
             </td>
