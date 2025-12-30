@@ -12,7 +12,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <div className="font-mono min-h-screen">
-      <meta name="description" content={data.description} />
       <link rel="icon" type="image/png" href={data.icon} />
       <script
         dangerouslySetInnerHTML={{
@@ -28,6 +27,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           `,
         }}
       />
+      <script data-goatcounter="https://groremus.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
       <main className="container relative">
         <Header />
         {children}

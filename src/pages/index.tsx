@@ -1,9 +1,12 @@
 import { Link } from 'waku';
+import { SEO } from '../components/seo';
+import { WebsiteStructuredData } from '../components/structured-data';
 
 export default async function HomePage() {
   return (
     <div>
-      <title>Groremus</title>
+      <SEO url="/" />
+      <WebsiteStructuredData />
       <h2 className="font-bold mb-2ch">
         Ferdinand Dorémus
       </h2>
@@ -26,9 +29,6 @@ export default async function HomePage() {
         </p>
         <p className="mb-lh">
           Most of the time i ride bikes, learn japanese, experiment with linux, cook food or brew coffee.
-        </p>
-        <p className="mb-lh">
-          You can read about it <Link to="/writings" className="underline hover:no-underline">here</Link>.
         </p>
       </div>
 

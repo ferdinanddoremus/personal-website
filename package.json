@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "waku dev",
-    "build": "waku build",
+    "build": "tsx scripts/generate-sitemap.ts && waku build",
     "start": "waku start",
+    "sitemap": "tsx scripts/generate-sitemap.ts",
     "deploy": "kamal deploy",
     "deploy:setup": "kamal setup",
     "deploy:rollback": "kamal rollback",
@@ -28,6 +29,7 @@
     "@types/react": "19.1.12",
     "@types/react-dom": "19.1.9",
     "tailwindcss": "4.1.13",
+    "tsx": "^4.21.0",
     "typescript": "5.9.2"
   }
 }

@@ -1,11 +1,16 @@
 import { getAllPosts } from "../../lib/markdown"
+import { SEO } from "../../components/seo"
 
 export default function Writings() {
   const posts = getAllPosts()
 
   return (
     <div>
-      <title>Writings</title>
+      <SEO
+        title="Writings"
+        description="Thoughts and writings about code, React Native, cycling, coffee, and life as a developer."
+        url="/writings"
+      />
       {posts.length === 0 ? (
         <div>
           <p>No writings found. Add some markdown files to the content/writings directory.</p>

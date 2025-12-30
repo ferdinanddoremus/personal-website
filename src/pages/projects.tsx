@@ -1,11 +1,16 @@
 import { Link } from 'waku';
+import { SEO } from '../components/seo';
 
 export default async function AboutPage() {
   const data = await getData();
 
   return (
     <div>
-      <title>{data.title}</title>
+      <SEO
+        title="Projects"
+        description="Cool projects and experiments by Ferdinand Dorémus, including siwa.io and dubsiren."
+        url="/projects"
+      />
       <p>
         Some cool stuff i work on:
       </p>

@@ -1,11 +1,13 @@
 import { getPost, getAllPosts } from '../../lib/markdown';
+import { SEO } from '../../components/seo';
+import { BlogPostStructuredData } from '../../components/structured-data';
 import type { PageProps } from 'waku/router';
 
-export default async function WritingPage({ 
-  slug, 
+export default async function WritingPage({
+  slug,
 }: PageProps<'/writings/[slug]'>) {
   const post = await getPost(slug);
-  
+
   if (!post) {
     return (
       <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
@@ -15,10 +17,24 @@ export default async function WritingPage({
       </div>
     );
   }
-  
+
+  const publishedTime = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
+
   return (
     <article>
-      <title>{post.title}</title>
+      <SEO
+        title={post.title}
+        description={post.excerpt || `Read ${post.title} by Ferdinand Dorémus`}
+        url={`/writings/${post.slug}`}
+        type="article"
+        publishedTime={publishedTime}
+      />
+      <BlogPostStructuredData
+        title={post.title}
+        description={post.excerpt || `Read ${post.title} by Ferdinand Dorémus`}
+        publishedTime={publishedTime}
+        url={`/writings/${post.slug}`}
+      />
       <div className="mb-3ch">
         <div
           className="post-content"
