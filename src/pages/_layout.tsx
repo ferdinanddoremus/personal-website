@@ -3,7 +3,6 @@ import '../styles.css';
 import type { ReactNode } from 'react';
 
 import { Header } from '../components/header';
-// import { Footer } from '../components/footer';
 import { Debug } from '../components/debug';
 
 type RootLayoutProps = { children: ReactNode };
@@ -15,20 +14,33 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <div className="font-mono min-h-screen">
       <meta name="description" content={data.description} />
       <link rel="icon" type="image/png" href={data.icon} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              try {
+                const stored = localStorage.getItem('theme');
+                const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const theme = stored || systemPreference;
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch (e) {}
+            })();
+          `,
+        }}
+      />
       <main className="container relative">
         <Header />
         {children}
         <Debug />
       </main>
-      {/* <Footer /> */}
     </div>
   );
 }
 
 const getData = async () => {
   const data = {
-    description: 'An internet website!',
-    icon: '/images/favicon.png',
+    description: 'Ferdinand Dorémus - Senior React Native Developer, cyclist, and specialty coffee lover. Writing about code, bikes, and coffee.',
+    icon: '/favicon.ico',
   };
 
   return data;

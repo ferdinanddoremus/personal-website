@@ -1,5 +1,6 @@
 import { Link } from 'waku';
 import { getVersion, getLastUpdateDate } from '../lib/version.js';
+import { ThemeToggle } from './theme-toggle';
 
 const version = getVersion();
 const lastUpdate = getLastUpdateDate();
@@ -15,6 +16,7 @@ export const Header = () => {
               <nav className="flex gap-ch">
                 <Link to="/projects" className="hover:underline">projects</Link>
                 <Link to="/writings" className="hover:underline">writings</Link>
+                <ThemeToggle />
               </nav>
             </td>
             <th className="table-border font-bold pt-[calc((var(--line-height)/2)-2)]">

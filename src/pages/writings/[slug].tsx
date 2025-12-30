@@ -19,21 +19,6 @@ export default async function WritingPage({
   return (
     <article>
       <title>{post.title}</title>
-      
-      {/* <div className="border px-2ch py-[var(--line-height)] mb-[var(--line-height)]">
-        <header>
-          <div className="flex items-center justify-between mb-ch text-sm">
-            <span>~/writings/{slug}</span>
-            {post.date && (
-              <time>{new Date(post.date).toLocaleDateString()}</time>
-            )}
-          </div>
-          <h1 className="font-bold mb-2ch">
-            {post.title}
-          </h1>
-        </header>
-      </div> */}
-      
       <div className="mb-3ch">
         <div
           className="post-content"

@@ -52,6 +52,28 @@ layer(base);
   --background-color: #fff;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #e0e0e0;
+    --background-color: #0a0a0a;
+  }
+}
+
+:root[data-theme='light'] {
+  --text-color: #000;
+  --background-color: #fff;
+}
+
+:root[data-theme='dark'] {
+  --text-color: #e0e0e0;
+  --background-color: #0a0a0a;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 @layer utilities {
   .debug-grid {    
     --color: color-mix(in srgb, var(--text-color) 10%, var(--background-color) 90%);
@@ -92,6 +114,14 @@ layer(base);
 
   .post-content p {
     @apply mb-lh;
+  }
+
+  .post-content ul {
+    @apply list-disc;
+  }
+
+  .post-content ol {
+    @apply list-decimal;
   }
 
   .post-content ul,
